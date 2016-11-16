@@ -1,0 +1,10 @@
+<div class="Profiles container">
+  <h1>Profiles</h1>
+  <div class="ProfilesList gallery row">
+    <div class="gallery-row col-md-4 col-sm-4 col-xs-12" ng-repeat="profile in profiles">
+      <a href="#/profiles/{{ profile.name }}">
+        <div class="gallery-item img-thumbnail cover-background" title="{{ profile.name }}" alt="{{ profile.name }} profile" style="background-image: url('{{ profile.thumbUrl }}')"></div>
+      </a>
+    </div>
+  </div>
+</div>

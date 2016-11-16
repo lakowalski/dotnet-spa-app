@@ -1,0 +1,16 @@
+.gallery-row {
+  padding:10px;
+}
+
+.gallery-item {
+  height:200px;
+  display:block;
+  background-color: #fff;
+  border: 5px solid #ddd;
+  border-radius: 10px;
+}
+
+.gallery-item:hover {
+  -webkit-transform: scale(1.1, 1.1);
+  transform: scale(1.1);
+}

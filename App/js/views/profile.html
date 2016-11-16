@@ -1,0 +1,23 @@
+<div class="Profile">
+  <div class="ProfileHeader" style="background-image: url('{{ profile.coverUrl }}')">
+    <div class="ProfileHeaderMenu">
+      <div class="container">
+        <div class="ProfileAvatar">
+          <div class="ProfileAvatarImg rounded opacity-border" style="background-image: url('{{ profile.thumbUrl }}')"></div>
+        </div>
+        <nav class="ProfileHeaderNavBar">
+            <ul class="nav navbar-nav pull-right">
+              <li ui-sref-active="active"><a ui-sref=".about" title="about"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+              <li ui-sref-active="active"><a ui-sref=".gallery" title="gallery"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></li>
+            </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="ProfileCard container">
+    <h2 class="ProfileCardName">{{ profile.fullName }}</h2>
+    <p class="ProfileCardCity"><span class="glyphicon glyphicon-map-marker"></span> {{ profile.city }}</p>
+  </div>
+
+  <div class="container" ui-view></div>
+</div>

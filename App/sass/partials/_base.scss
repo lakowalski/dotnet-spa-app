@@ -1,0 +1,25 @@
+@import "../modules/_animations";
+@import "../modules/_common";
+@import "../modules/_gallery";
+
+// variables
+$cgreen: #78D5BA;
+
+// base style
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background-color: white;
+  padding-top: 50px;
+  font-size:15px;
+}
+
+blockquote {
+  border-left: 5px solid $cgreen;
+  font-size:1em;
+  font-weight: italic;
+  margin-left:30px;
+  color:gray;
+}
