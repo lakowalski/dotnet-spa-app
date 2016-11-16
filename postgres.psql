@@ -1,0 +1,104 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.6.1
+-- Dumped by pg_dump version 9.6.1
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Name: postgres; Type: COMMENT; Schema: -; Owner: postgres
+--
+
+COMMENT ON DATABASE postgres IS 'default administrative connection database';
+
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+--
+-- Name: profile_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE profile_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE profile_id_seq OWNER TO postgres;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: Profiles; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE "Profiles" (
+    "ProfileId" integer DEFAULT nextval('profile_id_seq'::regclass) NOT NULL,
+    "Name" character varying(255),
+    "FullName" character varying(255),
+    "ThumbUrl" character varying(255),
+    "CoverUrl" character varying(255),
+    "City" character varying(255),
+    "FlickrTags" character varying(255),
+    "Description" text
+);
+
+
+ALTER TABLE "Profiles" OWNER TO postgres;
+
+--
+-- Data for Name: Profiles; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY "Profiles" ("ProfileId", "Name", "FullName", "ThumbUrl", "CoverUrl", "City", "FlickrTags", "Description") FROM stdin;
+1	marilyn	Marylin Monroe	https://secure.static.tumblr.com/8d9dd352d0869b6d6422a1e58eb392c7/uj2pgt4/Gtwnhm0z5/tumblr_static_8sgbrouj5x4w4gww4k8kos480_640_v2.jpg	http://thiswallpaper.com/cdn/hdwallpapers/380/black%20and%20white%20marilyn%20monroe%20desktop%20background%20wallpaper.jpeg	Poznan, PL	Marylin	<p>Lorem ipsum dolor sit amet, qui cu eligendi expetenda. Quaeque sanctus iudicabit ei usu, laboramus consetetur mea ad. Ius at nobis dicam reprehendunt, illud commune democritum at usu, ancillae eleifend pertinacia has in. Alii alienum cum ad. Quaeque accusamus prodesset his at, eu simul soleat constituam mea, ocurreret torquatos ex mea.</p><blockquote>Cu vel dicunt euismod petentium, an dico graeci qui. Ne iudico nostrud percipitur mel, eum doming sensibus an. Id alia verterem sententiae cum, et dolor definitionem mea. Consetetur persequeris id pri, eu mei virtute legendos mediocritatem. Eum ne impedit tincidunt. Vel an mazim omnesque conceptam.</blockquote><p>Commodo iracundia constituto ei vix, at aeque saepe partem cum. Meis appareat sit in. Vel te probo nusquam vituperatoribus, ea vero appareat guber    gren usu. Eu his elit summo. Te vis falli dolor denique, facilisi repudiare dissentiet est ei.</p>
+2	madonna	Madonna	http://vignette1.wikia.nocookie.net/twoja-twarz-brzmi-znajomo/images/7/7a/Screen-shot-2014-12-17-at-10-44-55-am.png/revision/latest?cb=20150702130142&path-prefix=pl	http://wallpapercave.com/wp/WtjD3bt.jpg	Paris, FR	Madonna,Singer	<p>Lorem ipsum dolor sit amet, qui cu eligendi expetenda. Quaeque sanctus iudicabit ei usu, laboramus consetetur mea ad. Ius at nobis dicam reprehendunt, illud commune democritum at usu, ancillae eleifend pertinacia has in. Alii alienum cum ad. Quaeque accusamus prodesset his at, eu simul soleat constituam mea, ocurreret torquatos ex mea.</p><blockquote>Cu vel dicunt euismod petentium, an dico graeci qui. Ne iudico nostrud percipitur mel, eum doming sensibus an. Id alia verterem sententiae cum, et dolor definitionem mea. Consetetur persequeris id pri, eu mei virtute legendos mediocritatem. Eum ne impedit tincidunt. Vel an mazim omnesque conceptam.</blockquote><p>Commodo iracundia constituto ei vix, at aeque saepe partem cum. Meis appareat sit in. Vel te probo nusquam vituperatoribus, ea vero appareat gubergren usu. Eu his elit summo. Te vis falli dolor denique, facilisi repudiare dissentiet est ei.</p>
+\.
+
+
+--
+-- Name: profile_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('profile_id_seq', 2, true);
+
+
+--
+-- Name: Profiles profiles_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY "Profiles"
+    ADD CONSTRAINT profiles_pkey PRIMARY KEY ("ProfileId");
+
+
+--
+-- PostgreSQL database dump complete
+--
+
